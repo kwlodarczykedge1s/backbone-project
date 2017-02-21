@@ -7,9 +7,7 @@ gulp.task('serve', function(){
             baseDir: ["./", "./src"]
         }
     })
-
     gulp.watch(['src/*.html', 'src/*.js']).on('change', browserSync.reload);
 })
-
 gulp.task('default', ['serve'])
 
