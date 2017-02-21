@@ -1,1 +1,1 @@
-console.log('hfdsklfjsdlk')
+var Model = Backbone.Model.extend({})
