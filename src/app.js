@@ -1,20 +1,43 @@
 $(function () {
-    var $addDisciple = $('<button>', {
-        click: function () {
-            console.log('click')
+
+    var AppRouter = Backbone.Router.extend({
+        routes: {
+            '': 'index',
+            'add-person': 'person',
+
         },
-        text: 'dodaj dziecko'
+        index: function(){
+            $(document.body).append('Index Route')
+        },
+        person: function(){
+            $(document.body).append('Add Person Route Route')
+        }
     })
 
-    var KinderGardenCollection = Backbone.Collection.extend({});
-    var classes = new KinderGardenCollection();
+    var myRouter = new AppRouter();
 
-    var Person = Backbone.Model.extend({})
-    var disciple = new Person();
+    // var $addDisciple = $('<button>', {
+    //     click: function () {
+    //         console.log('click')
+    //     },
+    //     class: ['btn btn-primary'],
+    //     text: 'dodaj dziecko'
+    // })
 
+    // var KinderGardenCollection = Backbone.Collection.extend({});
+    // var classes = new KinderGardenCollection();
 
-    console.log(classes)
+    // var Person = Backbone.Model.extend({
+    //     name: null,
+    //     lastName: null,
+    //     age: null
+    // })
+    // var disciple = new Person({
+    //     name: 'Jan',
+    //     lastName: 'Kowalski',
+    //     age: '15'
+    // });
 
-    $('#buttons')
-    .append($addDisciple)
+    // $('#buttons')
+    // .append($addDisciple)
 })
