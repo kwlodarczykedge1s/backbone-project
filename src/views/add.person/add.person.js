@@ -1,11 +1,26 @@
 $(function(){
-    var AddPersonRouter = Backbone.Router.extend({
+    var AppRouter = Backbone.Router.extend({
         routes: {
-            "addPerson": "add-person"
+            'add-person': 'addPerson'
         },
+        addPerson: function(){
+            console.log('AddPerson');
+        }
+    });
 
-    })
+    TableView = Backbone.View.extend({
+        el: $('body'),
+        initialize: function(){
+            this.render();
+        },
+        render: function(){
+            var template = _.template($('#add-person').html(), {});
+            this.$el.html(template);
 
-    new AddPersonRouter;
+        }
+    });
+
+
+    Router = new AppRouter();
     Backbone.history.start();
 })
