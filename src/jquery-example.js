@@ -1,4 +1,5 @@
 $(function () {
+    selectImportantCells()
     const uri = 'http://localhost:9001/'
     var dataObject = {}
     var tBody = $('#tBody');
@@ -44,19 +45,29 @@ $(function () {
             var id = clickedObject._id
 
             $.ajax({
-                url: uri+'users?_id='+id,
+                url: uri + 'users?_id=' + id,
                 type: 'DELETE',
-                result: function(resp){
+                result: function (resp) {
                     console.log(resp)
                 }
             })
-                .then(function(){
+                .then(function () {
                     console.log('success')
                 })
-                .catch(function(err){
-                    console.log('error: '+err)
+                .catch(function (err) {
+                    console.log('error: ' + err)
                 })
-
         })
     })
+
+    function selectImportantCells() {
+        $('tbody').on('click', 'td', function () {
+            $(this).css({
+                'background-color': 'red',
+                'font-weight': 'bold',
+                'color': 'white',
+                'font-size': '16px;'
+            })
+        })
+    }
 })
