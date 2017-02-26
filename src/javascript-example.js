@@ -133,4 +133,20 @@
     }
 
     sum.apply(this, [2,6,8]) // pierwszy argument this, drugi tablica
+
+    //bind()
+    function sayHello(text){
+        console.log(text + ' ' + this.firstName+ ' ' +this.lastName)
+    }
+
+    var person4 = {
+        firstName: 'Mariusz',
+        lastName: 'Kot'
+    }
+
+    var hello = sayHello.bind(person4, 'Cześć')
+    hello()
+
+    
+
 })();
